@@ -1,0 +1,323 @@
+step 1: statring with for loop to filter the jpeg and png files
+step 2: finding jpeg and png files
+step 3: creating a folder for jpeg and png files
+step 4: creating new folder
+step 5: moving the files to the specific folder of files in new folder
+
+for x in `ls *.jpeg *.png`
+
+do
+
+       Name=`echo $x | awk -F. '{ print $1 }'`
+
+       if [ -d $Name ]
+
+       then
+
+           rm -rf $Name
+
+       fi
+
+       mkdir $Name
+       mv $x "$Name"
+
+done
+
+
+
+read -p "Enter day:" day
+read -p "Enter month:" month
+if (( ($month <= 6 && $day <=20) ))
+then
+  echo $month $day "true"
+    elif (( ($month >=3 && $month < 6) && ($day<31) ))
+    then
+      echo  "true"
+else
+    echo "false"	
+fi
+
+
+echo "select number"
+echo "1234567890"
+read n
+if [ $n == 1 ]
+then
+echo "one"
+elif [ $n == 2 ]
+then
+echo "two"
+elif [ $n == 3 ]
+then
+echo "three"
+elif [ $n == 4 ]
+then
+echo "four"
+elif [ $n == 5 ]
+then
+echo "five"
+elif [ $n == 6 ]
+then
+echo "six"
+elif [ $n == 7 ]
+then
+echo "seven"
+elif [ $n == 8 ]
+then
+echo "eight"
+elif [ $n == 9 ]
+then
+echo "nine"
+elif [ $n == 0 ]
+then
+echo "zero"
+else
+echo "check number"
+fi
+
+Dice number 
+
+num=$((RANDOM%6))
+echo "the Dice number is;$num"
+
+addition of two dice
+
+num1=$((RANDOM%6))
+num2=$((RANDOM%6))
+result=$((num1+num2))
+echo "$result"
+
+SUM AND AVG
+
+for x in `seq 5`
+do
+num=$((RANDOM%90+10))
+sum=$((sum+num))
+avg=$((sum/5))
+done
+
+echo "$sum"
+echo "$avg"
+
+
+
+CONVERSION
+echo "number to be converted:"
+read number
+feet=$(($number*12))
+inches=$(($number/12))
+echo "inch conversion to feet="$inches
+
+COIN FLIP
+
+ans=$((RANDOM%2))
+if [ $ans -eq 0 ]
+then
+echo "HEADS"
+elif [ $ans -eq 1 ]
+then
+echo "TAILS"
+fi
+
+leap year
+read -p "Enter year:"
+read y
+year=$y
+if [ $((year%4)) -eq 0 ]
+then
+echo "$y is leap year"
+elif [ $((year%400)) -eq 0 ]
+then
+echo "$y is leap year"
+elif [ $((year%100)) -ne 0 ]
+then
+echo "$y is leap year"
+else
+echo "$y is not leap year"
+fi
+
+WEEK DAY 
+
+echo "select number"
+echo "1234567"
+read n
+if [ $n == 1 ]
+then
+echo "Sunday"
+elif [ $n == 2 ]
+then
+echo "Monday"
+elif [ $n == 3 ]
+then
+echo "Tuesday"
+elif [ $n == 4 ]
+then
+echo "Wednsday"
+elif [ $n == 5 ]
+then
+echo "Thursday"
+elif [ $n == 6 ]
+then
+echo "Friday"
+elif [ $n == 7 ]
+then
+echo "Satrday"
+else
+echo "Wrong input"
+fi
+
+number to word using case 
+
+read -p "Enter a fav number " number
+
+
+
+case $number in
+
+   1)
+
+      echo "One"
+
+      ;;
+
+   2)
+
+      echo "Two"
+
+      ;;
+
+   3)
+
+      echo "Three"
+
+      ;;
+
+   4)
+
+      echo "Four"
+
+      ;;
+
+   5)
+
+      echo "Five"
+
+      ;;
+   6)
+
+      echo "Six"
+
+      ;;
+    5)
+
+      echo "Five"
+
+      ;;
+    7)
+
+      echo "Seven"
+
+      ;;
+    8)
+
+      echo "Eight"
+
+      ;;
+     9)
+
+      echo "Nine"
+
+      ;;
+
+
+   *)
+
+     echo "Please Check your input , it's Invalid ..."
+
+     ;;
+
+esac
+
+
+useing case weekday
+
+read -p "Enter a  number " number
+
+
+
+case $number in
+
+   1)
+
+      echo "Sunday"
+
+      ;;
+
+   2)
+
+      echo "Monday"
+
+      ;;
+
+   3)
+
+      echo "Tuesday"
+
+      ;;
+
+   4)
+
+      echo "Wednsday"
+
+      ;;
+
+   5)
+
+      echo "Thursday"
+
+      ;;
+   6)
+
+      echo "Friday"
+
+      ;;
+    7)
+
+      echo "Satrday"
+
+      ;;
+   *)
+
+     echo "Please Check your input , it's Invalid ..."
+
+     ;;
+
+esac
+
+prime number
+
+echo "enter the number:"
+read number
+count=0
+for (( $i=1;$i<=$number;$i++ ))
+do
+if [ $number%$i == 0 ]
+then
+count++
+fi
+done
+if [ count == 2 ]
+then
+echo "$number is prime"
+else
+echo "$number is not prime"
+fi
+
+
+
+
+
+
+
+
+
